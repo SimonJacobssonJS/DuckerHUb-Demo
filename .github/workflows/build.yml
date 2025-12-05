@@ -1,0 +1,25 @@
+name: Bygg och Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checka ut repo
+        uses: actions/checkout@v4
+
+      - name: Sätt upp Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Installera beroenden
+        run: npm install
+
+      - name: Kör enkel test
+        run: npm test
