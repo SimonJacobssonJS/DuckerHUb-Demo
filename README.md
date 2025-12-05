@@ -1,4 +1,4 @@
-# Uppgift – CI/CD med Node.js, Docker och GitHub Actions 
+# Uppgift – CI/CD med Node.js, Docker och GitHub Actions
 
 Det här repot innehåller en enkel **Node.js/Express-applikation** som containeriseras med **Docker**
 och deployas automatiskt till **Docker Hub** via **GitHub Actions**.
@@ -57,7 +57,7 @@ När servern körs svarar den på:
 
 Krav:
 
-- Node.js 
+- Node.js
 - npm
 
 Installera beroenden:
@@ -78,7 +78,7 @@ npm start
 http://localhost:3000
 ```
 
-Du ska se JSON med "message": "CI/CD Demo Running!" .
+Du ska se JSON i stil med "message": "CI/CD Demo Running!" .
 
 ---
 
@@ -148,7 +148,7 @@ i GitHub-repot:
 
 1. `DOCKERHUB_USERNAME` – ditt Docker Hub-användarnamn  
    → `simonjacobssonchas`
-2. `DOCKERHUB_TOKEN` – ett Access Token från Docker Hub  
+2. `DOCKERHUB_TOKEN` – ett Access Token från Docker Hub
    - Skapas via Docker Hub: **Account Settings → Security → New Access Token**
    - Klistra in värdet som secret i GitHub:  
      `Settings → Secrets and variables → Actions → New repository secret`
