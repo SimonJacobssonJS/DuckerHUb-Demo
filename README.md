@@ -1,4 +1,4 @@
-# Uppgift – CI/CD med Node.js, Docker och GitHub Actions 🚀
+# Uppgift – CI/CD med Node.js, Docker och GitHub Actions 
 
 Det här repot innehåller en enkel **Node.js/Express-applikation** som containeriseras med **Docker**
 och deployas automatiskt till **Docker Hub** via **GitHub Actions**.
@@ -13,7 +13,7 @@ Docker Hub-image: `simonjacobssonchas/uppgift-demo:latest`
 
 ---
 
-## 📁 Projektstruktur
+## Projektstruktur
 
 ```text
 Uppgift DockerHub/
@@ -29,7 +29,7 @@ Uppgift DockerHub/
 
 ---
 
-## 🧩 Applikationen (Node.js + Express)
+## Applikationen (Node.js + Express)
 
 `index.js` innehåller en mycket enkel HTTP-server:
 
@@ -39,7 +39,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.json({ message: 'CI/CD Demo Running! 🚀' });
+  res.json({ message: 'CI/CD Demo Running!' });
 });
 
 app.listen(port, () => {
@@ -49,15 +49,15 @@ app.listen(port, () => {
 
 När servern körs svarar den på:
 
-- `GET /` med ett JSON-svar: `{ "message": "CI/CD Demo Running! 🚀" }`
+- `GET /` med ett JSON-svar: `{ "message": "CI/CD Demo Running!" }`
 
 ---
 
-## ▶️ Köra lokalt utan Docker
+## Köra lokalt utan Docker
 
 Krav:
 
-- Node.js 18+
+- Node.js 
 - npm
 
 Installera beroenden:
@@ -78,11 +78,11 @@ npm start
 http://localhost:3000
 ```
 
-Du ska se JSON-svaret.
+Du ska se JSON med "message": "CI/CD Demo Running!" .
 
 ---
 
-## 🐳 Bygga och köra med Docker (lokalt)
+## Bygga och köra med Docker (lokalt)
 
 Bygg image:
 
@@ -104,7 +104,7 @@ http://localhost:3000
 
 ---
 
-## ⚙️ GitHub Actions – Workflows
+## GitHub Actions – Workflows
 
 Det finns två workflows i `.github/workflows/`:
 
@@ -141,7 +141,7 @@ Detta visar att projektet går att bygga innan vi skapar en Docker-image.
 
 ---
 
-## 🔐 GitHub Secrets (för Docker Hub)
+## GitHub Secrets (för Docker Hub)
 
 För att workflowet ska kunna logga in mot Docker Hub måste två secrets sättas
 i GitHub-repot:
@@ -164,20 +164,3 @@ Workflowet använder dessa i steget:
 ```
 
 ---
-
-## ✅ Sammanfattning
-
-Den här uppgiften visar:
-
-- En enkel Node.js/Express-applikation
-- En Dockerfile som containeriserar appen
-- Ett CI/CD-flöde med GitHub Actions som:
-  - bygger och testar koden
-  - bygger en Docker-image
-  - pushar imagen till Docker Hub (`simonjacobssonchas/uppgift-demo:latest`)
-
-Det här uppfyller kravet:
-
-> skapa ett repo med en enkel node.js-applikation [...] med ett par enkla
-> GitHub Actions workflows som bygger, containeriserar och deployar till
-> Docker Hub.
